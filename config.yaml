@@ -1,6 +1,6 @@
 services:
   - name: Google
-    url: https://google.com
+    url: https://google123456.com
     max_response_time: 0.5
 
   - name: JSONPlaceholder
