@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import streamlit as st
 
+from streamlit_autorefresh import st_autorefresh
 
 st.set_page_config(
     page_title="Observability Dashboard",
@@ -12,6 +13,7 @@ st.set_page_config(
 )
 
 st.title("📊 Observability Monitoring Dashboard")
+st_autorefresh(interval=30000, key="dashboardrefresh")
 st.markdown("Simple monitoring dashboard for service metrics and alerts")
 
 

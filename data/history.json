@@ -238,5 +238,21 @@
         "response_time": 0.079,
         "timestamp": "2026-05-08T18:42:05.306503",
         "success": true
+    },
+    {
+        "service": "Google",
+        "url": "https://google.com",
+        "status_code": 200,
+        "response_time": 1.038,
+        "timestamp": "2026-05-08T19:11:58.112543",
+        "success": true
+    },
+    {
+        "service": "JSONPlaceholder",
+        "url": "https://jsonplaceholder.typicode.com/posts",
+        "status_code": 200,
+        "response_time": 0.101,
+        "timestamp": "2026-05-08T19:11:58.494954",
+        "success": true
     }
 ]
