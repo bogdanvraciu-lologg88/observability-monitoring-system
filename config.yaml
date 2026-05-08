@@ -1,11 +1,13 @@
 services:
   - name: Google
-    url: https://google123456.com
-    max_response_time: 0.5
+    url: https://google.com
+    max_response_time: 100
 
   - name: JSONPlaceholder
     url: https://jsonplaceholder.typicode.com/posts
-    max_response_time: 1.0
+    max_response_time: 100
 
 alerting:
-  telegram_enabled: false
+  telegram_enabled: true
+  telegram_bot_token: "8687331385:AAGFznGcYxBE8k8Z3r1T0FeI4aj-u4xncUU"
+  telegram_chat_id: "1603171744"
