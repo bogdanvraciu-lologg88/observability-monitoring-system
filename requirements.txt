@@ -1,3 +1,4 @@
 requests
 PyYAML
 python-telegram-bot
+streamlit-autorefresh
