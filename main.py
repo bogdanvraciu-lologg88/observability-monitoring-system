@@ -27,30 +27,17 @@ for service in services:
     if result["success"]:
         print(f"Response Time: {result['response_time']}s")
 
-        info_message = f"""
-[INFO]
-
-Service: {result['service']}
-Response Time: {result['response_time']}s
-"""
-
     else:
         print(f"ERROR: {result['error']}")
 
-        info_message = f"""
-[ERROR]
-
-Service: {result['service']}
-Error: {result['error']}
-"""
-
-    if telegram_enabled:
-        send_telegram_alert(info_message, config)
-
+    # Trimite alertă DOAR dacă există anomalie
     if alerts:
         print("\nALERTS:")
 
         for alert in alerts:
+            print(f"[{alert['severity'].upper()}] {alert['message']}")
+            print(f"Recommendation: {alert['recommendation']}")
+
             alert_message = f"""
 [{alert['severity'].upper()}]
 
@@ -58,6 +45,8 @@ Service: {result['service']}
 Message: {alert['message']}
 Recommendation: {alert['recommendation']}
 """
+
+            print(alert_message)
 
             if telegram_enabled:
                 print("Sending Telegram alert...")
