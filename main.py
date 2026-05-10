@@ -13,15 +13,25 @@ from monitor.database import (
 with open("config.yaml", "r") as file:
     config = yaml.safe_load(file)
 
+initialize_database()
+
 
 services = config["services"]
 telegram_enabled = config["alerting"]["telegram_enabled"]
 
+baseline_response_time = None
 
 for service in services:
     result = check_service(service)
 
-    alerts = analyze_result(result, service)
+    if service.get("baseline"):
+        baseline_response_time = result["response_time"]
+
+    alerts = analyze_result(
+        result,
+        service,
+        baseline_response_time
+    )   
 
     save_result(result)
 
