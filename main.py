@@ -1,9 +1,13 @@
 import yaml
 
+initialize_database()
 from monitor.collector import check_service
 from monitor.analyzer import analyze_result
 from monitor.notifier import send_telegram_alert
-from monitor.history import save_result
+from monitor.database import (
+    initialize_database,
+    save_result
+)
 
 
 with open("config.yaml", "r") as file:
